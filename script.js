@@ -1,25 +1,16 @@
-function largestOfFour(arr) {
-  let largest = 0;
-  let array;
-  arr.forEach((element) => {
-    element.forEach((item) => {
-      if (item > largest) largest = item;
-    });
-  });
+function confirmEnding(str, target) {
+  let stringLength = str.length;
+  let targetLength = target.length;
+  let start = stringLength - targetLength;
 
-  arr.forEach((element) => {
-    if (element.includes(largest)) {
-      array = element;
-    }
-  });
-  return array;
+  let subString = str.substring(start);
+
+  if (subString === target) {
+    return true;
+  }
+
+  return false;
 }
 
-console.log(
-  largestOfFour([
-    [4, 5, 100, 3],
-    [13, 27, 18, 26],
-    [32, 35, 3752, 39],
-    [1000, 2001, 857, 1],
-  ])
-);
+console.log(confirmEnding("Bastian", "an"));
+console.log(confirmEnding("Bastian", "and"));
