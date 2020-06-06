@@ -1,9 +1,14 @@
-function truncateString(str, num) {
-  if (str.length > num) {
-    return str.slice(0, num) + "...";
-  } else {
-    return str;
+function findElement(arr, func) {
+  let num = 0;
+
+  for (var i = 0; i < arr.length; i++) {
+    num = arr[i];
+    if (func(num)) {
+      return num;
+    }
   }
+
+  return undefined;
 }
 
-console.log(truncateString("Peter Piper picked a peck of pickled peppers", 11));
+findElement([1, 2, 3, 4], (num) => num % 2 === 0);
