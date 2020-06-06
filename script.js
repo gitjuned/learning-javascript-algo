@@ -1,9 +1,11 @@
-function titleCase(str) {
-  var convertToArray = str.toLowerCase().split(" ");
-  var result = convertToArray.map(function (val) {
-    return val.replace(val.charAt(0), val.charAt(0).toUpperCase());
+function bouncer(arr) {
+  let temp = [];
+  arr.forEach((element) => {
+    if (element) {
+      temp.push(element);
+    }
   });
-  return result.join(" ");
+  return temp;
 }
 
-console.log(titleCase("I'm a little tea pot"));
+console.log(bouncer([7, "ate", "", false, 9]));
