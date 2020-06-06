@@ -1,16 +1,15 @@
-function confirmEnding(str, target) {
-  let stringLength = str.length;
-  let targetLength = target.length;
-  let start = stringLength - targetLength;
+function repeatStringNumTimes(str, num) {
+  let currentStr = str;
 
-  let subString = str.substring(start);
-
-  if (subString === target) {
-    return true;
+  if (num === 1) {
+    return currentStr;
+  } else if (num > 1) {
+    for (let i = 1; i < num; i++) {
+      currentStr += str;
+    }
+    return currentStr;
   }
-
-  return false;
+  return "";
 }
 
-console.log(confirmEnding("Bastian", "an"));
-console.log(confirmEnding("Bastian", "and"));
+console.log(repeatStringNumTimes("abc", 2));
