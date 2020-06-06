@@ -1,9 +1,9 @@
-function booWho(bool) {
-  if (typeof bool === "boolean") {
-    return true;
-  } else {
-    return false;
-  }
+function titleCase(str) {
+  var convertToArray = str.toLowerCase().split(" ");
+  var result = convertToArray.map(function (val) {
+    return val.replace(val.charAt(0), val.charAt(0).toUpperCase());
+  });
+  return result.join(" ");
 }
 
-console.log(booWho(null));
+console.log(titleCase("I'm a little tea pot"));
