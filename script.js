@@ -1,15 +1,9 @@
-function repeatStringNumTimes(str, num) {
-  let currentStr = str;
-
-  if (num === 1) {
-    return currentStr;
-  } else if (num > 1) {
-    for (let i = 1; i < num; i++) {
-      currentStr += str;
-    }
-    return currentStr;
+function truncateString(str, num) {
+  if (str.length > num) {
+    return str.slice(0, num) + "...";
+  } else {
+    return str;
   }
-  return "";
 }
 
-console.log(repeatStringNumTimes("abc", 2));
+console.log(truncateString("Peter Piper picked a peck of pickled peppers", 11));
